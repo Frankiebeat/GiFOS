@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>GiFOS</title>
+	<!-- FontAwesome-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+		integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous" />
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap"
+		rel="stylesheet" />
+	<!-- STYLES -->
+	<link rel="stylesheet" href="/Styles/styles.css" />
+
+</head>
+
+<body>
+
+	<!---    HEADER    -->
+
+	<header>
+		<nav class="header-nav">
+			<div class="logo">
+				<img src="/Assets/logo-desktop.svg" alt="logo-desktop" />
+			</div>
+
+			<div class="navbar">
+				<input type="checkbox" class="toggle" id="btn-menu" />
+				<label for="btn-menu"></label>
+
+				<i class="fas fa-bars dis-n"></i>
+				<i class="fas fa-times"></i>
+
+				<ul class="menu" id="menu">
+					<li><a href="" class="text-hover"> Modo Nocturno </a></li>
+					<hr />
+					<li><a href="" class="text-hover"> Favoritos </a></li>
+					<hr />
+					<li><a href="" class="text-hover"> Mis GiFOS </a></li>
+					<li class="create-gif-btn">
+						<img src="/Assets/button-crear-gifo.svg" alt="button-crear-gifo" />
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<!----    SEARCHBAR       -->
+
+	<section class="searchbar">
+		<div class="searchbarhead">
+			<h2>
+				Inspirate, busca, guarda y crea los mejores <span> GiFOS </span>
+			</h2>
+		</div>
+
+		<div class="searchbarmain">
+			<img src="/Assets/ilustra_header.svg" alt="ilustra_header" />
+			<div class="searcher">
+				<input class="input-search" type="text" placeholder="Buscar GiFOS y más..." />
+				<img class="btn-search" src="/Assets/icon-search.svg" alt="icon-search" />
+				<i class="fas fa-times"></i>
+				<ul id="search-list" class="autocom-box"></ul>
+			</div>
+		</div>
+
+		<div class="searchbarbottom">
+			<h4>Trending:</h4>
+			<p>
+				Reaction, Entertainment, <br />
+				Sports, Stickers, Artists
+			</p>
+		</div>
+	</section>
+
+	<!----    TRENDING    -->
+
+	<section class="trending">
+		<h2>Trending GiFOS</h2>
+		<p>
+			Mira los últimos <br />
+			GiFOS de nuestra comunidad
+		</p>
+
+		<!--- SLIDER -->
+
+		<div class="slider">
+			<div class="slide-left">
+				<div class="arrow-left">
+					<i class="fas fa-chevron-left"></i>
+				</div>
+			</div>
+
+			<ul class="gif-grid">
+
+				<li class="gif-card">
+					<img src="/Assets/nyan-cat-gif.gif" alt="" />
+
+					<div class="gif-actions">
+						<button><i class="fas fa-heart"></i></button>
+						<button><i class="fas fa-download"></i></button>
+						<button><i class="fas fa-expand-alt"></i></button>
+					</div>
+
+					<div class="gif-info">
+						<p class="gif-user">User</p>
+						<p class="gif-title">Título GIF</p>
+					</div>
+
+				</li>
+
+				<li class="gif-card">
+					<img src="/Assets/nyan-cat-gif.gif" alt="" />
+
+					<div class="gif-actions">
+						<button><i class="fas fa-heart"></i></button>
+						<button><i class="fas fa-download"></i></button>
+						<button><i class="fas fa-expand-alt"></i></button>
+					</div>
+
+					<div class="gif-info">
+						<p class="gif-user">User</p>
+						<p class="gif-title">Título GIF</p>
+					</div>
+				</li>
+
+				<li class="gif-card">
+					<img src="/Assets/nyan-cat-gif.gif" alt="" />
+
+					<div class="gif-actions">
+						<button><i class="fas fa-heart"></i></button>
+						<button><i class="fas fa-download"></i></button>
+						<button><i class="fas fa-expand-alt"></i></button>
+					</div>
+
+					<div class="gif-info">
+						<p class="gif-user">User</p>
+						<p class="gif-title">Título GIF</p>
+					</div>
+				</li>
+			</ul>
+
+			<div class="slide-right">
+				<div class="arrow-right">
+					<i class="fas fa-chevron-right"></i>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!----  FOOTER   -->
+
+	<footer>
+		<div class="share t-align-center">
+			<p>Compartir en:</p>
+
+			<div class="social-media">
+				<img src="/Assets/icon_facebook.svg" alt="icon-fb" />
+				<img src="/Assets/icon-twitter.svg" alt="icon-tw" />
+				<img src="/Assets/icon_instagram.svg" alt="icon-ig" />
+			</div>
+		</div>
+
+		<p class="copyright">© GIFOS 2020 All Rights Reserved.</p>
+	</footer>
+
+
+	<!-- SCRIPTS JS -->
+
+	<script src="/JS/services.js"></script>
+
+
+
+
+</body>
+
+</html>

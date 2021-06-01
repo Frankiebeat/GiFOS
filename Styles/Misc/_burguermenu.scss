@@ -1,0 +1,36 @@
+.burguer {
+    display: none;
+    @include media(sm) {
+        display: block;
+    }
+}
+
+.toggle {
+    position: absolute;
+    display: block;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.fa-bars {
+    color: $dm-color-1;
+    font-size: 25px;
+}
+
+.fa-times {
+    color: $dm-color-1;
+    font-size: 25px;
+    display: none;
+}
+
+#btn-menu:checked~.fa-bars {
+    display: none;
+}
+
+#btn-menu:checked~.fa-times {
+    display: block;
+}
+
+#btn-menu:checked~.menu {
+    max-height: 65vh;
+}

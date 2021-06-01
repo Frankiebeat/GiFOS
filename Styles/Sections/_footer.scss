@@ -1,0 +1,48 @@
+footer p {
+	font-family: $primary_font;
+}
+
+footer {
+	@include media(lg) {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+		align-items: center;
+	}
+	@include media(sm) {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.share {
+	margin: 50px;
+
+	@include media(sm) {
+		display: flex;
+		flex-direction: column;
+	}
+
+	@include media(lg) {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.social-media {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	img {
+		margin: 10px;
+
+		@include media(lg) {
+			margin: 5px;
+			margin-left: 10px;
+		}
+	}
+}
+
+.copyright {
+	margin: 50px;
+}
