@@ -69,7 +69,7 @@
 .slide-right {
 	color: $dm-color-1;
 	padding: 7px;
-	border: 1px solid #572ee5;
+	border: 1px solid $dm-color-1;
 	@include media(sm) {
 		display: none;
 	}
@@ -77,23 +77,33 @@
 
 .slide-left:hover,
 .slide-right:hover {
-	background: #572ee5;
+	background: $dm-color-1;
 	color: white;
 }
 
 .gif-actions {
 	position: absolute;
-	color: $dm-color-1;
 	top: 4px;
 	right: 4px;
 	i {
-		padding: 3px;
+		padding: 5px;
 		color: $dm-color-1;
-		opacity: 0.7;
-		background: #ffffff;
-		border-radius: 6px;
-		border-radius: 6px;
+		background-color: #ffffff;
+		border-radius: 9px;
+		opacity: 0.5;
+		.fa-heart {
+			content: url("");
+		}
 	}
+	i:hover {
+		cursor: pointer;
+		opacity: 1;
+		color: $dm-color-1;
+		background: #ffffff;
+	}
+}
+.fa-heart:hover {
+	font-weight: 900;
 }
 
 .gif-info {
@@ -121,10 +131,21 @@
 }
 
 .gif-card:hover {
-	opacity: 0.7;
-	background: #572ee5;
 	.gif-info,
 	.gif-actions {
 		display: block;
 	}
+}
+
+.hover-div:hover:before {
+	content: "";
+	display: block;
+	height: 130%;
+	position: absolute;
+	visibility: visible !important;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: $dm-color-1 !important;
+	opacity: 0.5;
 }

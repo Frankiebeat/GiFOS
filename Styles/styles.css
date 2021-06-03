@@ -15,8 +15,17 @@
   text-decoration-thickness: 2px;
 }
 
+.btn-hover:hover {
+  cursor: pointer;
+  color: #572ee5;
+}
+
 .dis-n {
   display: none;
+}
+
+.dis-b {
+  display: block;
 }
 
 .t-align-center {
@@ -167,6 +176,47 @@ header {
   .create-gif-btn {
     display: none;
   }
+}
+
+.create-gif-btn {
+  display: block;
+  background-color: #ffffff;
+  border: 1px solid #572ee5;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.create-gif-btn span {
+  display: block;
+  width: 17px;
+  height: 3px;
+  background-color: #572ee5;
+  position: relative;
+  left: 17px;
+}
+
+.create-gif-btn .line-1 {
+  top: 23px;
+}
+
+.create-gif-btn .line-2 {
+  top: 20px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.create-gif-btn:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #572ee5;
+  border: 1px solid #572ee5;
+}
+
+.create-gif-btn:hover span {
+  background-color: #ffffff;
 }
 
 .searchbarhead {
@@ -367,18 +417,31 @@ header {
 
 .gif-actions {
   position: absolute;
-  color: #572ee5;
   top: 4px;
   right: 4px;
 }
 
 .gif-actions i {
-  padding: 3px;
+  padding: 5px;
   color: #572ee5;
-  opacity: 0.7;
+  background-color: #ffffff;
+  border-radius: 9px;
+  opacity: 0.5;
+}
+
+.gif-actions i .fa-heart {
+  content: url("");
+}
+
+.gif-actions i:hover {
+  cursor: pointer;
+  opacity: 1;
+  color: #572ee5;
   background: #ffffff;
-  border-radius: 6px;
-  border-radius: 6px;
+}
+
+.fa-heart:hover {
+  font-weight: 900;
 }
 
 .gif-info {
@@ -406,14 +469,22 @@ header {
   display: none;
 }
 
-.gif-card:hover {
-  opacity: 0.7;
-  background: #572ee5;
-}
-
 .gif-card:hover .gif-info,
 .gif-card:hover .gif-actions {
   display: block;
+}
+
+.hover-div:hover:before {
+  content: "";
+  display: block;
+  height: 130%;
+  position: absolute;
+  visibility: visible !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #572ee5 !important;
+  opacity: 0.5;
 }
 
 footer p {
@@ -489,12 +560,14 @@ footer p {
           justify-content: center;
 }
 
-.social-media img {
+.social-media i {
+  font-size: 20px;
+  color: gray;
   margin: 10px;
 }
 
 @media (max-width: 1440px) {
-  .social-media img {
+  .social-media i {
     margin: 5px;
     margin-left: 10px;
   }

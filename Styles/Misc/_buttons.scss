@@ -1,7 +1,12 @@
 .text-hover:hover {
-    text-decoration: underline;
-    text-decoration-style: solid;
-    text-decoration-color: $dm-color-2;
-    text-underline-offset: 5px;
-    text-decoration-thickness: 2px;
+	text-decoration: underline;
+	text-decoration-style: solid;
+	text-decoration-color: $dm-color-2;
+	text-underline-offset: 5px;
+	text-decoration-thickness: 2px;
+}
+
+.btn-hover:hover {
+	cursor: pointer;
+	color: $dm-color-1;
 }
