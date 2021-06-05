@@ -350,15 +350,16 @@ header {
 }
 
 .gif-grid {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  max-height: 220px;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  max-width: 80%;
 }
 
 @media (max-width: 767px) {
@@ -373,14 +374,17 @@ header {
 .gif-card {
   display: inline-block;
   width: 325px;
-  height: 250px;
+  height: 270px;
   list-style: none;
-  margin-right: 20px;
+  margin-right: 40px;
+  margin-top: 30px;
   position: relative;
+  margin-bottom: 60px;
 }
 
 .gif-card img {
-  max-width: 100%;
+  width: 330px;
+  height: 250px;
 }
 
 @media (max-width: 767px) {
@@ -447,21 +451,23 @@ header {
 .gif-info {
   color: white;
   position: absolute;
-  bottom: -70px;
+  bottom: 20px;
   left: 15px;
   margin-bottom: -10px;
-  text-align: center;
 }
 
 .gif-info p {
   color: white;
   font-family: "Monstserrat", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .gif-user {
-  margin-bottom: -13px;
+  position: absolute;
+  bottom: 30px;
+  text-align: left;
   font-weight: lighter;
+  color: #808080;
 }
 
 .gif-info,
@@ -477,12 +483,12 @@ header {
 .hover-div:hover:before {
   content: "";
   display: block;
-  height: 130%;
+  height: 250px;
   position: absolute;
   visibility: visible !important;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 330px;
   background: #572ee5 !important;
   opacity: 0.5;
 }

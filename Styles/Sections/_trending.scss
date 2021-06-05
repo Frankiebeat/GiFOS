@@ -33,9 +33,12 @@
 }
 
 .gif-grid {
-	display: flex;
-	flex-direction: row;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	max-height: 220px;
 	justify-content: space-around;
+	max-width: 80%;
 	@include media(sm) {
 		display: block;
 		white-space: nowrap;
@@ -47,12 +50,15 @@
 .gif-card {
 	display: inline-block;
 	width: 325px;
-	height: 250px;
+	height: 270px;
 	list-style: none;
-	margin-right: 20px;
+	margin-right: 40px;
+	margin-top: 30px;
 	position: relative;
+	margin-bottom: 60px;
 	img {
-		max-width: 100%;
+		width: 330px;
+		height: 250px;
 	}
 	@include media(sm) {
 		margin: 20px;
@@ -109,20 +115,23 @@
 .gif-info {
 	color: white;
 	position: absolute;
-	bottom: -70px;
+	bottom: 20px;
 	left: 15px;
 	margin-bottom: -10px;
-	text-align: center;
+
 	p {
 		color: white;
 		font-family: $secondary_font;
-		font-size: 16px;
+		font-size: 14px;
 	}
 }
 
 .gif-user {
-	margin-bottom: -13px;
+	position: absolute;
+	bottom: 30px;
+	text-align: left;
 	font-weight: lighter;
+	color: $dm-color-grey;
 }
 
 .gif-info,
@@ -140,12 +149,12 @@
 .hover-div:hover:before {
 	content: "";
 	display: block;
-	height: 130%;
+	height: 250px;
 	position: absolute;
 	visibility: visible !important;
 	top: 0;
 	left: 0;
-	width: 100%;
+	width: 330px;
 	background: $dm-color-1 !important;
 	opacity: 0.5;
 }
