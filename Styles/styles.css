@@ -350,16 +350,13 @@ header {
 }
 
 .gif-grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
-  max-height: 220px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  max-width: 80%;
+  display: inline-block;
+  overflow-x: hidden;
+  white-space: nowrap;
+  max-height: 280px;
+  max-width: 1200px;
+  margin-right: 40px;
+  overflow-y: hidden;
 }
 
 @media (max-width: 767px) {
@@ -368,17 +365,19 @@ header {
     white-space: nowrap;
     overflow-x: scroll;
     padding: 0% 5%;
+    max-height: 300px;
   }
 }
 
 .gif-card {
   display: inline-block;
+  position: relative;
   width: 325px;
   height: 270px;
   list-style: none;
+  margin-left: 40px;
   margin-right: 40px;
   margin-top: 30px;
-  position: relative;
   margin-bottom: 60px;
 }
 
@@ -390,6 +389,8 @@ header {
 @media (max-width: 767px) {
   .gif-card {
     margin: 20px;
+    width: 325px;
+    height: 300px;
   }
 }
 
@@ -397,26 +398,6 @@ header {
   .gif-card:last-of-type {
     margin-right: 50px;
   }
-}
-
-.slide-left,
-.slide-right {
-  color: #572ee5;
-  padding: 7px;
-  border: 1px solid #572ee5;
-}
-
-@media (max-width: 767px) {
-  .slide-left,
-  .slide-right {
-    display: none;
-  }
-}
-
-.slide-left:hover,
-.slide-right:hover {
-  background: #572ee5;
-  color: white;
 }
 
 .gif-actions {
@@ -459,7 +440,16 @@ header {
 .gif-info p {
   color: white;
   font-family: "Monstserrat", sans-serif;
-  font-size: 14px;
+  font-size: 12px;
+}
+
+@media (max-width: 767px) {
+  .gif-info {
+    bottom: 50px;
+  }
+  .gif-info p {
+    font-size: 12px;
+  }
 }
 
 .gif-user {
@@ -491,6 +481,27 @@ header {
   width: 330px;
   background: #572ee5 !important;
   opacity: 0.5;
+}
+
+/** Slide Buttons **/
+.slide-left,
+.slide-right {
+  color: #572ee5;
+  padding: 7px;
+  border: 1px solid #572ee5;
+}
+
+@media (max-width: 767px) {
+  .slide-left,
+  .slide-right {
+    display: none;
+  }
+}
+
+.slide-left:hover,
+.slide-right:hover {
+  background: #572ee5;
+  color: white;
 }
 
 footer p {

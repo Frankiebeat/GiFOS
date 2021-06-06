@@ -33,28 +33,31 @@
 }
 
 .gif-grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 1fr;
-	max-height: 220px;
-	justify-content: space-around;
-	max-width: 80%;
+	display: inline-block;
+	overflow-x: hidden;
+	white-space: nowrap;
+	max-height: 280px;
+	max-width: 1200px;
+	margin-right: 40px;
+	overflow-y: hidden;
 	@include media(sm) {
 		display: block;
 		white-space: nowrap;
 		overflow-x: scroll;
 		padding: 0% 5%;
+		max-height: 300px;
 	}
 }
 
 .gif-card {
 	display: inline-block;
+	position: relative;
 	width: 325px;
 	height: 270px;
 	list-style: none;
+	margin-left: 40px;
 	margin-right: 40px;
 	margin-top: 30px;
-	position: relative;
 	margin-bottom: 60px;
 	img {
 		width: 330px;
@@ -62,6 +65,8 @@
 	}
 	@include media(sm) {
 		margin: 20px;
+		width: 325px;
+		height: 300px;
 	}
 }
 
@@ -69,22 +74,6 @@
 	@include media(sm) {
 		margin-right: 50px;
 	}
-}
-
-.slide-left,
-.slide-right {
-	color: $dm-color-1;
-	padding: 7px;
-	border: 1px solid $dm-color-1;
-	@include media(sm) {
-		display: none;
-	}
-}
-
-.slide-left:hover,
-.slide-right:hover {
-	background: $dm-color-1;
-	color: white;
 }
 
 .gif-actions {
@@ -122,7 +111,14 @@
 	p {
 		color: white;
 		font-family: $secondary_font;
-		font-size: 14px;
+		font-size: 12px;
+	}
+
+	@include media(sm) {
+		bottom: 50px;
+		p {
+			font-size: 12px;
+		}
 	}
 }
 
@@ -157,4 +153,22 @@
 	width: 330px;
 	background: $dm-color-1 !important;
 	opacity: 0.5;
+}
+
+/** Slide Buttons **/
+
+.slide-left,
+.slide-right {
+	color: $dm-color-1;
+	padding: 7px;
+	border: 1px solid $dm-color-1;
+	@include media(sm) {
+		display: none;
+	}
+}
+
+.slide-left:hover,
+.slide-right:hover {
+	background: $dm-color-1;
+	color: white;
 }

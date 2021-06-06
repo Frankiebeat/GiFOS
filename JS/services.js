@@ -8,6 +8,7 @@ let SEARCH_LIMIT = 10;
 /* API CONNECTIONS */
 
 export default {
+
     /* SEARCH */
 
     /* Search API connection */
@@ -43,7 +44,7 @@ export default {
 
     requestTrending(limit, offset) {
         return new Promise((resolve, reject) => {
-            fetch(`${ENDPOINT}trending?api_key=${API_KEY}`)
+            fetch(`${ENDPOINT}trending?api_key=${API_KEY}&offset=${0}&limit=${36}`)
                 .then((response) => response.json())
                 .then((data) => resolve(data))
                 .catch((error) => reject(`Erorr ${error}`));
