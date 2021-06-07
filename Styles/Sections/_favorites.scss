@@ -1,0 +1,36 @@
+.fav-heart {
+	margin-top: 40px;
+}
+
+.favorites {
+	h2 {
+		font-family: $secondary_font;
+		color: $dm-color-1;
+		font-size: 20px;
+		line-height: 30px;
+	}
+
+	h3 {
+		font-family: $secondary_font;
+		color: $dm-color-2;
+		font-size: 20px;
+		line-height: 30px;
+	}
+
+	.no-fav-gifs {
+		max-width: 250px;
+		max-height: 250px;
+		display: flex;
+		margin: 60px auto;
+		flex-direction: column;
+		justify-content: center;
+
+		img {
+			max-height: 120px;
+		}
+
+		@include media(lg) {
+			max-width: 400px;
+		}
+	}
+}

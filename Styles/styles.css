@@ -20,6 +20,10 @@
   color: #572ee5;
 }
 
+.active {
+  color: #572ee5;
+}
+
 .dis-n {
   display: none;
 }
@@ -145,8 +149,8 @@ header {
 
 .menu li a {
   text-decoration: none;
-  color: #572ee5;
   font-family: "Roboto", sans-serif;
+  color: #572ee5;
   padding: 20px;
   margin-bottom: 5px;
 }
@@ -206,6 +210,12 @@ header {
   top: 20px;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
+}
+
+@media (max-width: 767px) {
+  .create-gif-btn {
+    display: none;
+  }
 }
 
 .create-gif-btn:hover {
@@ -502,6 +512,50 @@ header {
 .slide-right:hover {
   background: #572ee5;
   color: white;
+}
+
+.fav-heart {
+  margin-top: 40px;
+}
+
+.favorites h2 {
+  font-family: "Monstserrat", sans-serif;
+  color: #572ee5;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.favorites h3 {
+  font-family: "Monstserrat", sans-serif;
+  color: #50e3c2;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.favorites .no-fav-gifs {
+  max-width: 250px;
+  max-height: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 60px auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.favorites .no-fav-gifs img {
+  max-height: 120px;
+}
+
+@media (max-width: 1440px) {
+  .favorites .no-fav-gifs {
+    max-width: 400px;
+  }
 }
 
 footer p {

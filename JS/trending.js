@@ -2,6 +2,7 @@ import API from './services.js';
 const trendingGifsContainer = document.querySelector('.gif-grid')
 const sliderLeftbtn = document.querySelector('#slide-left')
 const sliderRightBtn = document.querySelector('#slide-right')
+const btnMenuActive = document.querySelector(".active")
 let gifsId = [];
 let offset = 0;
 let sliderOffset = 0;
@@ -80,7 +81,7 @@ const moveSliderRight = () => {
         left: sliderOffset,
         behavior: "smooth"
     })
-
+    console.log(trendingGifsContainer.scrollLeft)
     sliderLeftbtn.setAttribute('style', 'display:block')
 
     /** Display none in the right button when the scroll is over */
@@ -94,7 +95,7 @@ const moveSliderRight = () => {
 
 
 /** Check the scrollbar position */
-/*console.log(trendingGifsContainer.scrollLeft)*/
+
 
 
 const moveSliderLeft = () => {
@@ -103,6 +104,7 @@ const moveSliderLeft = () => {
         left: sliderOffset,
         behavior: 'smooth'
     })
+    console.log(trendingGifsContainer.scrollLeft)
 
     sliderRightBtn.setAttribute('style', 'display:block')
 
@@ -111,11 +113,24 @@ const moveSliderLeft = () => {
     }
 }
 
+
+
+/** MISC */
+
+/** @description Changes color of active nav menu btn */
+
+
+const changebtnMenu = () => {
+    btnMenuActive.setAttribute('style', 'color:red')
+}
+
 /** Event listeners */
 
 
 sliderRightBtn.addEventListener("click", moveSliderRight)
-sliderLeftbtn.addEventListener('click', moveSliderLeft)
+sliderLeftbtn.addEventListener("click", moveSliderLeft)
+/* btnMenuActive.addEventListener("click", changebtnMenu) */
+
 
 
 

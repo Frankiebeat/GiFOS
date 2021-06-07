@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favoritos</title>
+
+    <!-- FontAwesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap"
+        rel="stylesheet" />
+    <!-- STYLES -->
+    <link rel="stylesheet" href="/Styles/styles.css" />
+</head>
+
+<body>
+
+    <!---    HEADER    -->
+
+    <header>
+        <nav class="header-nav">
+            <div class="logo">
+                <a href="/index.html" class="text-hover">
+                    <img src="/Assets/logo-desktop.svg" alt="logo-desktop" />
+            </div> </a>
+
+            <div class="navbar">
+                <input type="checkbox" class="toggle" id="btn-menu" />
+                <label for="btn-menu"></label>
+
+                <i class="fas fa-bars dis-n"></i>
+                <i class="fas fa-times"></i>
+
+                <ul class="menu" id="menu">
+                    <li><a href="/Pages/" class="text-hover"> Modo Nocturno </a></li>
+                    <hr />
+                    <li><a href="/Pages/fav.html" class="text-hover"> Favoritos </a></li>
+                    <hr />
+                    <li><a href="/Pages/my-gifs.html" class="text-hover"> Mis GiFOS </a></li>
+                    <li class="create-gif-btn">
+                        <span class="line-1"></span>
+                        <span class="line-2"></span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="favorites">
+        <div class="t-align-center fav-heart"> <img src="/Assets/icon-favoritos.svg" alt=""></div>
+        <h2 class="t-align-center"> Favoritos </h2>
+
+        <div class="t-align-center no-fav-gifs"> <img src="/Assets/icon-fav-sin-contenido.svg"
+                alt="icon-fav-sin-contenido">
+            <h3 class="t-align-center"> "¡Guarda tu primer GIFO en Favoritos para que se muestre aquí!"</h3>
+        </div>
+    </section>
+
+    <!----    TRENDING    -->
+
+    <section class="trending">
+        <h2>Trending GiFOS</h2>
+        <p>
+            Mira los últimos <br />
+            GiFOS de nuestra comunidad
+        </p>
+
+        <!--- SLIDER -->
+
+        <div class="slider">
+            <div class="slide-left" id="slide-left">
+                <div class="arrow-left">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+            </div>
+
+            <ul class="gif-grid" id="gif-grid">
+            </ul>
+
+            <div class="slide-right" id="slide-right">
+                <div class="arrow-right">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!----  FOOTER   -->
+
+    <footer>
+        <div class="share t-align-center">
+            <p>Compartir en:</p>
+
+            <div class="social-media">
+                <i class="fab fa-facebook-f btn-hover"></i>
+                <i class="fab fa-twitter btn-hover"></i>
+                <i class="fab fa-instagram btn-hover"></i>
+            </div>
+        </div>
+
+        <p class="copyright">© GIFOS 2020 All Rights Reserved.</p>
+    </footer>
+
+
+    <!-- SCRIPTS JS -->
+
+    <script type="module" src="/JS/trending.js"></script>
+
+</body>
+
+</html>
