@@ -24,6 +24,27 @@ const handleToSearch = () => {
 
 }
 
+const searcherAutoCom = document.querySelector("#search-list");
+const searcherCross = document.querySelector("#times-search")
+
+/** 
+ * @description Brings the autocom menu when input is clicked
+ */
+
+const handleSearchInput = () => {
+    searcherAutoCom.classList.remove('dis-n');
+    searcherCross.classList.add('dis-b', 'times-search')
+    btnSearch.classList.add('btn-search-active')
+}
+
+const closeSearchInput = () => {
+    searcherAutoCom.classList.add('dis-n')
+    searcherCross.classList.remove('dis-b', 'times-search')
+    btnSearch.classList.remove('btn-search-active')
+}
+
+searcherCross.addEventListener('click', closeSearchInput);
+inputSearch.addEventListener('click', handleSearchInput);
 btnSearch.addEventListener("click", handleToSearch);
 
 handleToSearch()

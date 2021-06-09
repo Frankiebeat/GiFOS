@@ -2,7 +2,6 @@ import API from './services.js';
 const trendingGifsContainer = document.querySelector('.gif-grid')
 const sliderLeftbtn = document.querySelector('#slide-left')
 const sliderRightBtn = document.querySelector('#slide-right')
-const btnMenuActive = document.querySelector(".active")
 let gifsId = [];
 let offset = 0;
 let sliderOffset = 0;
@@ -113,23 +112,11 @@ const moveSliderLeft = () => {
     }
 }
 
-
-
-/** MISC */
-
-/** @description Changes color of active nav menu btn */
-
-
-const changebtnMenu = () => {
-    btnMenuActive.setAttribute('style', 'color:red')
-}
-
 /** Event listeners */
 
 
 sliderRightBtn.addEventListener("click", moveSliderRight)
 sliderLeftbtn.addEventListener("click", moveSliderLeft)
-/* btnMenuActive.addEventListener("click", changebtnMenu) */
 
 
 
