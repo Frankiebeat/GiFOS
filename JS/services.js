@@ -3,7 +3,7 @@ const ENDPOINT = "http://api.giphy.com/v1/gifs/";
 const inputSearch = document.querySelector(".input-search");
 const btnSearch = document.querySelector(".btn-search");
 let searchOffset = 0;
-let SEARCH_LIMIT = 10;
+let SEARCH_LIMIT = 12;
 
 /* API CONNECTIONS */
 

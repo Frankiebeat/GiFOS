@@ -66,7 +66,9 @@ const markup = (trendingGifs) => {
             <p class="gif-user">${username}</p>
             <p class="gif-title">${title}</p>
         </div>
-    </div>`
+    </div> 
+    </li>`
+
 }
 
 

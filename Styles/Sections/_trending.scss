@@ -52,7 +52,7 @@
 .gif-card {
 	display: inline-block;
 	position: relative;
-	width: 325px;
+	width: 330px;
 	height: 270px;
 	list-style: none;
 	margin-left: 40px;
@@ -145,12 +145,12 @@
 .hover-div:hover:before {
 	content: "";
 	display: block;
-	height: 250px;
 	position: absolute;
+	height: 100%;
 	visibility: visible !important;
 	top: 0;
 	left: 0;
-	width: 330px;
+	width: 100%;
 	background: $dm-color-1 !important;
 	opacity: 0.5;
 }
