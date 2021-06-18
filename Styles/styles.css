@@ -17,7 +17,8 @@
 
 .btn-hover:hover {
   cursor: pointer;
-  color: #572ee5;
+  background-color: #572ee5;
+  color: white !important;
 }
 
 .active {
@@ -294,6 +295,7 @@ header {
   border-radius: 27px;
   padding: 10px 80px;
   position: relative;
+  width: 300px;
 }
 
 .searcher .btn-search {
@@ -364,6 +366,7 @@ header {
   margin-top: 10px;
   border-radius: 1px;
   color: #808080;
+  opacity: 0.2;
 }
 
 @media (max-width: 767px) {
@@ -404,6 +407,10 @@ header {
   margin-right: 15px;
 }
 
+.searcher .autocom-box .item-autocom:hover {
+  cursor: pointer;
+}
+
 .btn-search-active {
   display: block;
   position: relative;
@@ -427,16 +434,23 @@ header {
   cursor: pointer;
 }
 
+.search-title {
+  text-transform: uppercase;
+}
+
 .search-results {
   font-family: "Roboto", sans-serif;
   color: #572ee5;
 }
 
 .search-results hr {
-  margin: 50px auto;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
   width: 300px;
   border-radius: 1px;
   color: #808080;
+  opacity: 0.2;
 }
 
 @media (max-width: 767px) {
@@ -445,6 +459,17 @@ header {
     left: 50px;
     margin: 10px auto;
   }
+}
+
+.search-results .ver-mas {
+  font-size: 10px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 20px;
+  color: #572ee5;
+  width: 70px;
+  margin-bottom: 50px;
 }
 
 .search-gif-grid {
@@ -474,6 +499,7 @@ header {
 .searchbarbottom {
   font-family: "Monstserrat", sans-serif;
   color: #572ee5;
+  margin-top: -60px;
 }
 
 .searchbarbottom h4 {

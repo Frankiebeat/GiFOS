@@ -8,7 +8,8 @@
 
 .btn-hover:hover {
 	cursor: pointer;
-	color: $dm-color-1;
+	background-color: $dm-color-1;
+	color: white !important;
 }
 
 .active {
