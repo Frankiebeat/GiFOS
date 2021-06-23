@@ -10,6 +10,8 @@ const searchResults = document.querySelector("#search-title")
 const searchbarBottom = document.querySelector('.searchbarbottom');
 const AutoCom = document.querySelector('.autocom-box');
 const btnVerMas = document.querySelector('.ver-mas');
+const searchTrendingContainer = document.querySelector('.trending-search')
+const searchTrendingItem = document.querySelector('.t-item')
 
 let searchOffset = 0;
 let SEARCH_LIMIT = 12;
@@ -43,7 +45,7 @@ const requestAutoCom = (searchValue) => {
  * @param offset 
  */
 
-const handleAutoCom = (SearchCross = false) => {
+const handleAutoCom = () => {
     const searchValue = inputSearch.value;
     requestAutoCom(searchValue)
         .then((response) => {
@@ -60,29 +62,20 @@ const handleAutoCom = (SearchCross = false) => {
                 <li><img src="/Assets/icon-search.svg" alt="icon-search">Sugerencia</li>
                 <li><img src="/Assets/icon-search.svg" alt="icon-search">Sugerencia</li>
                 <li><img src="/Assets/icon-search.svg" alt="icon-search">Sugerencia</li>`;
-            AutoCom.innerHTML = restoreSearch;
 
-
+            // AutoCom.innerHTML = restoreSearch;
 
             if (data.length) {
                 /** @description Loop Markup and Paiting */
                 for (let i = 0; i < data.length; i++) {
                     list += markUpAutocom(data[i])
                     AutoCom.innerHTML = list;
-
                 }
-
                 addEventAutoComplete()
 
             } else {
                 AutoCom.innerHTML = restoreSearch;
-
             }
-
-            if (SearchCross == true) {
-                AutoCom.innerHTML = restoreSearch;
-            }
-
         })
 
         .catch((error) => reject(`Error ${error}`));
@@ -168,11 +161,17 @@ const handleToSearch = (SeeMore = false) => {
             /** @description Remove Searchbar Bottom */
             searchbarBottom.classList.add('dis-n');
 
-            /** @ descrpiton If offset is == 36, "ver más" dissapears */
-            if (totalGifs < 48) {
+            /** @ descrpiton if totalGifs > 48 != 0 , "ver más" appears, If search is null, shows message */
+            const nullSearch = document.querySelector('.search-null')
+            if (totalGifs < 48 && totalGifs != 0 && data.length >= 12) {
                 btnVerMas.classList.remove('dis-n');
+                nullSearch.classList.add('dis-n')
+            } else if (totalGifs == 0) {
+                nullSearch.classList.remove('dis-n')
+                btnVerMas.classList.add('dis-n')
             } else {
                 btnVerMas.classList.add('dis-n');
+
             }
         })
 
@@ -264,10 +263,85 @@ const closeSearchInput = () => {
     inputSearch.value = "";
 }
 
+/** TRENDING SEARCH  */
+
+const requestTrendingSearch = () => {
+    return new Promise((resolve, reject) => {
+        fetch(`http://api.giphy.com/v1/trending/searches?api_key=${API_KEY}`)
+            .then((response) => response.json())
+            .then((data) => resolve(data))
+            .catch((error) => reject(`Error ${error}`));
+    })
+}
+
+const handleTrendingSearch = () => {
+    requestTrendingSearch()
+        .then((response) => {
+            const {
+                data
+            } = response
+            console.log(data)
+
+            let trendingItem = '';
+
+            let splicedArray = data.splice(0, 5)
+            console.log(splicedArray)
+
+            for (let index = 0; index < splicedArray.length; index++) {
+
+                if (index != 4) {
+                    trendingItem = markupTrendingSearch(splicedArray[index] + ',')
+                } else {
+                    trendingItem = markupTrendingSearch(splicedArray[index] + '.')
+                }
+                searchTrendingContainer.innerHTML += trendingItem;
+            }
+
+            addEventTrendingSearch()
+
+        })
+        .catch((error) => (`Error ${error} en HandleTrendingSearch`));
+}
+
+/** @description MarkUp for each trending search item */
+
+const markupTrendingSearch = (trendingItem) => {
+    const {
+        data
+    } = trendingItem;
+    return `<li class="t-item"> ${trendingItem}</li>
+`;
+}
+
+/**
+ * @description Replaces the input with selected Item and executes handleToSearch
+ */
+
+const handleTrendingSearchItem = () => {
+    inputSearch.value = event.target.innerText.slice(0, -1);
+    handleToSearch();
+
+}
+
+/** @description Add events to each trending search item
+ */
+
+const addEventTrendingSearch = () => {
+    const trendingSearchItem = document.querySelectorAll('.t-item')
+
+    trendingSearchItem.forEach((trendingSearchItem) => {
+        trendingSearchItem.addEventListener('click', handleTrendingSearchItem)
+    })
+}
+
+
 /** EVENTS  */
 
 searcherCross.addEventListener('click', closeSearchInput);
-inputSearch.addEventListener('input', handleAutoCom)
+inputSearch.addEventListener('input', handleAutoCom);
 inputSearch.addEventListener('click', handleSearchInput);
 btnSearch.addEventListener("click", handleToSearch);
 btnVerMas.addEventListener('click', () => handleToSearch(true));
+
+
+handleTrendingSearch()

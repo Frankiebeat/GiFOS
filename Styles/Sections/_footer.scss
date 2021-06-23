@@ -44,6 +44,10 @@ footer {
 			margin-left: 10px;
 		}
 	}
+	i:hover {
+		color: $dm-color-1;
+		cursor: pointer;
+	}
 }
 
 .copyright {

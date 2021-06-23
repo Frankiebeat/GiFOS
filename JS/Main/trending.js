@@ -1,4 +1,4 @@
-import API from './services.js';
+import API from '../Services/services.js';
 const trendingGifsContainer = document.querySelector('.gif-grid')
 const sliderLeftbtn = document.querySelector('#slide-left')
 const sliderRightBtn = document.querySelector('#slide-right')

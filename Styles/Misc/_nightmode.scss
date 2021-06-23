@@ -1,0 +1,78 @@
+body {
+	&.darkmode {
+		p,
+		h1,
+		h2,
+		h3,
+		h4,
+		li,
+		a {
+			color: $nm-color-1 !important;
+		}
+		background-color: $nm-color-body;
+
+		.t-item:hover {
+			color: $dm-color-2 !important;
+		}
+
+		.slide-left,
+		.slide-right {
+			color: $nm-color-1;
+			border: 1px solid $nm-color-1;
+		}
+
+		.slide-left:hover,
+		.slide-right:hover {
+			background-color: white;
+		}
+
+		.ver-mas {
+			border: 1px solid $nm-color-1;
+			color: $nm-color-1;
+		}
+
+		.btn-hover:hover {
+			background-color: white;
+			color: $nm-color-1 !important;
+		}
+
+		.create-gif-btn {
+			background-color: $nm-color-body;
+			border: 1px solid $nm-color-1 !important;
+			span {
+				background-color: $nm-color-1 !important;
+			}
+		}
+
+		.create-gif-btn:hover {
+			background-color: white;
+		}
+
+		.trending {
+			background-color: $nm-color-trending;
+		}
+
+		.input-search {
+			background-color: $nm-color-body;
+			color: #6b7989;
+		}
+
+		.searcher {
+			border-color: $nm-color-1;
+			i {
+				color: $nm-color-1;
+			}
+		}
+
+		.social-media {
+			i:hover {
+				background-color: $nm-color-body;
+				color: white;
+			}
+		}
+	}
+}
+
+.btn-dark-mode:hover {
+	cursor: pointer;
+}

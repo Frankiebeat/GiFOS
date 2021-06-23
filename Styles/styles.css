@@ -46,6 +46,84 @@
           align-items: center;
 }
 
+body.darkmode {
+  background-color: #37383c;
+}
+
+body.darkmode p,
+body.darkmode h1,
+body.darkmode h2,
+body.darkmode h3,
+body.darkmode h4,
+body.darkmode li,
+body.darkmode a {
+  color: darkgrey !important;
+}
+
+body.darkmode .t-item:hover {
+  color: #50e3c2 !important;
+}
+
+body.darkmode .slide-left,
+body.darkmode .slide-right {
+  color: darkgrey;
+  border: 1px solid darkgrey;
+}
+
+body.darkmode .slide-left:hover,
+body.darkmode .slide-right:hover {
+  background-color: white;
+}
+
+body.darkmode .ver-mas {
+  border: 1px solid darkgrey;
+  color: darkgrey;
+}
+
+body.darkmode .btn-hover:hover {
+  background-color: white;
+  color: darkgrey !important;
+}
+
+body.darkmode .create-gif-btn {
+  background-color: #37383c;
+  border: 1px solid darkgrey !important;
+}
+
+body.darkmode .create-gif-btn span {
+  background-color: darkgrey !important;
+}
+
+body.darkmode .create-gif-btn:hover {
+  background-color: white;
+}
+
+body.darkmode .trending {
+  background-color: #222326;
+}
+
+body.darkmode .input-search {
+  background-color: #37383c;
+  color: #6b7989;
+}
+
+body.darkmode .searcher {
+  border-color: darkgrey;
+}
+
+body.darkmode .searcher i {
+  color: darkgrey;
+}
+
+body.darkmode .social-media i:hover {
+  background-color: #37383c;
+  color: white;
+}
+
+.btn-dark-mode:hover {
+  cursor: pointer;
+}
+
 /*  SECTION */
 body {
   margin: 0 auto;
@@ -274,6 +352,12 @@ header {
           flex-direction: column;
 }
 
+@media (max-width: 767px) {
+  .searchbarmain {
+    margin-top: 50px;
+  }
+}
+
 .searchbarmain input {
   border-style: none;
   outline: none;
@@ -419,7 +503,7 @@ header {
 
 @media (max-width: 767px) {
   .btn-search-active {
-    right: 370px !important;
+    right: 390px !important;
   }
 }
 
@@ -435,7 +519,18 @@ header {
 }
 
 .search-title {
-  text-transform: uppercase;
+  text-transform: capitalize;
+}
+
+.search-null {
+  margin: 0 auto;
+  margin-top: -80px;
+  padding: 20px;
+}
+
+.search-null h3 {
+  font-family: "Monstserrat", sans-serif;
+  color: #50e3c2;
 }
 
 .search-results {
@@ -523,6 +618,48 @@ header {
   .searchbarbottom br {
     display: block;
   }
+}
+
+.trending-search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 20px;
+}
+
+@media (max-width: 767px) {
+  .trending-search {
+    margin-right: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    font-size: 0.8rem;
+    margin-top: -10px;
+  }
+}
+
+.trending-search li {
+  list-style: none;
+  padding: 3px;
+  text-transform: capitalize;
+}
+
+.trending-search:hover {
+  cursor: pointer;
+}
+
+.t-item:hover {
+  color: #50e3c2;
 }
 
 .trending {
@@ -853,6 +990,11 @@ footer p {
     margin: 5px;
     margin-left: 10px;
   }
+}
+
+.social-media i:hover {
+  color: #572ee5;
+  cursor: pointer;
 }
 
 .copyright {

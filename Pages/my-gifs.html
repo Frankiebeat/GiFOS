@@ -25,22 +25,23 @@
         <nav class="header-nav">
             <div class="logo">
                 <a href="/index.html" class="text-hover">
-                    <img src="/Assets/logo-desktop.svg" alt="logo-desktop" />
+                    <img src="/Assets/logo-desktop.svg" alt="logo-desktop" class="logoday" />
+                    <img src="/Assets/Logo-modo-noc.svg" alt="logo-desktop" class="dis-n logodark" />
             </div> </a>
 
             <div class="navbar">
                 <input type="checkbox" class="toggle" id="btn-menu" />
                 <label for="btn-menu"></label>
 
-                <i class="fas fa-bars dis-n"></i>
-                <i class="fas fa-times"></i>
+                <i class="fas fa-bars"></i>
+                <i class="fa fa-times times-burger"></i>
 
-                <ul class="menu" id="menu">
-                    <li><a href="/Pages/" class="text-hover"> Modo Nocturno </a></li>
+                <ul class="menu">
+                    <li><a class="text-hover btn-dark-mode" id="a"> Modo Nocturno </a></li>
                     <hr />
-                    <li><a href="/Pages/fav.html" class="text-hover"> Favoritos </a></li>
+                    <li><a href="/Pages/fav.html" class="text-hover" id="a"> Favoritos </a></li>
                     <hr />
-                    <li><a href="/Pages/my-gifs.html" class="text-hover active"> Mis GiFOS </a></li>
+                    <li><a href="/Pages/my-gifs.html" class="text-hover" id="a"> Mis GiFOS </a></li>
                     <li class="create-gif-btn">
                         <span class="line-1"></span>
                         <span class="line-2"></span>
@@ -96,9 +97,9 @@
             <p>Compartir en:</p>
 
             <div class="social-media">
-                <i class="fab fa-facebook-f btn-hover"></i>
-                <i class="fab fa-twitter btn-hover"></i>
-                <i class="fab fa-instagram btn-hover"></i>
+                <i class="fab fa-facebook-f "></i>
+                <i class="fab fa-twitter "></i>
+                <i class="fab fa-instagram "></i>
             </div>
         </div>
 
@@ -108,7 +109,8 @@
 
     <!-- SCRIPTS JS -->
 
-    <script type="module" src="/JS/trending.js"></script>
+    <script type="module" src="/JS/Main/trending.js"></script>
+    <script type="module" src="/JS/Services/nightmode.js"> </script>
 
 </body>
 

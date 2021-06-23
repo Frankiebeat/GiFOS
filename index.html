@@ -23,7 +23,8 @@
 		<nav class="header-nav">
 			<div class="logo">
 				<a href="/index.html" class="text-hover">
-					<img src="/Assets/logo-desktop.svg" alt="logo-desktop" />
+					<img src="/Assets/logo-desktop.svg" alt="logo-desktop" class="logoday" />
+					<img src="/Assets/Logo-modo-noc.svg" alt="logo-desktop" class="dis-n logodark" />
 			</div> </a>
 
 			<div class="navbar">
@@ -34,7 +35,7 @@
 				<i class="fa fa-times times-burger"></i>
 
 				<ul class="menu">
-					<li><a href="/Pages/" class="text-hover" id="a"> Modo Nocturno </a></li>
+					<li><a class="text-hover btn-dark-mode" id="a"> Modo Nocturno </a></li>
 					<hr />
 					<li><a href="/Pages/fav.html" class="text-hover" id="a"> Favoritos </a></li>
 					<hr />
@@ -69,11 +70,11 @@
 				<i class="fas fa-times" id="times-search"></i>
 				<!--dis-b times-search -->
 				<ul id="search-list" class="autocom-box dis-n">
-					 <hr>
-					 <li><img src="/Assets/icon-search.svg" alt="icon-search"> Sugerencia</li>
+					<hr>
 					<li><img src="/Assets/icon-search.svg" alt="icon-search"> Sugerencia</li>
 					<li><img src="/Assets/icon-search.svg" alt="icon-search"> Sugerencia</li>
-					<li><img src="/Assets/icon-search.svg" alt="icon-search"> Sugerencia</li> 
+					<li><img src="/Assets/icon-search.svg" alt="icon-search"> Sugerencia</li>
+					<li><img src="/Assets/icon-search.svg" alt="icon-search"> Sugerencia</li>
 				</ul>
 			</div>
 		</div>
@@ -84,15 +85,19 @@
 			</ul>
 			<div class="ver-mas t-align-center dis-n btn-hover" id="ver-mas"> VER MÁS</div>
 
+			<div class="search-null t-align-center dis-n">
+				<img src="/Assets/icon-busqueda-sin-resultado.svg" alt="icon-busqueda-sin-resultado">
+				<h3> Intenta con otra búsqueda.</h3>
+			</div>
+
 		</div>
 
 
 		<div class="searchbarbottom">
 			<h4>Trending:</h4>
-			<p>
-				Reaction, Entertainment, <br />
-				Sports, Stickers, Artists
-			</p>
+			<ul class="trending-search">
+
+			</ul>
 		</div>
 	</section>
 
@@ -132,9 +137,9 @@
 			<p>Compartir en:</p>
 
 			<div class="social-media">
-				<i class="fab fa-facebook-f btn-hover"></i>
-				<i class="fab fa-twitter btn-hover"></i>
-				<i class="fab fa-instagram btn-hover"></i>
+				<i class="fab fa-facebook-f"></i>
+				<i class="fab fa-twitter"></i>
+				<i class="fab fa-instagram "></i>
 			</div>
 		</div>
 
@@ -143,8 +148,9 @@
 
 	<!-- SCRIPTS JS -->
 
-	<script type="module" src="/JS/search.js"></script>
-	<script type="module" src="/JS/trending.js"></script>
+	<script type="module" src="/JS/Main/search.js"></script>
+	<script type="module" src="/JS/Main/trending.js"></script>
+	<script type="module" src="/JS/Services/nightmode.js"> </script>
 </body>
 
 </html>
