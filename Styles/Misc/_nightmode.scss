@@ -7,7 +7,7 @@ body {
 		h4,
 		li,
 		a {
-			color: $nm-color-1 !important;
+			color: $nm-color-1;
 		}
 		background-color: $nm-color-body;
 
@@ -68,6 +68,12 @@ body {
 			i:hover {
 				background-color: $nm-color-body;
 				color: white;
+			}
+		}
+
+		.gif-info {
+			p {
+				color: white !important;
 			}
 		}
 	}

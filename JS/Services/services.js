@@ -25,4 +25,15 @@ export default {
     },
 
 
+
+    requestGifId() {
+        return new Promise((resolve, reject) => {
+            fetch(`http://api.giphy.com/v1/gifs/search/tags?api_key=${API_KEY}&q=${searchValue}`)
+                .then((response) => response.json())
+                .then((data) => resolve(data))
+                .catch((error) => reject(`Error ${error}`));
+        })
+    }
+
+
 };

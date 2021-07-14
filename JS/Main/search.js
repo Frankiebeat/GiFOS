@@ -20,6 +20,7 @@ let SEARCH_LIMIT = 12;
 let allGifs = [];
 let totalGifs = 0;
 
+
 /* SEARCH */
 
 /** Autocom API Connection */
@@ -158,6 +159,8 @@ const handleToSearch = (SeeMore = false) => {
                 searchContainer.innerHTML = Gifs;
             }
 
+            addEventFav()
+
             /** @description Remove Searchbar Bottom */
             searchbarBottom.classList.add('dis-n');
 
@@ -193,15 +196,16 @@ const markup = (Gifs) => {
     const {
         title,
         images,
-        username
+        username,
+        id
     } = Gifs;
 
-    return `<li class="gif-card">
+    return `<li class="gif-card" id="${id}">
     <div class="hover-div">
         <img src=${images.original.url} alt""/>
 
         <div class="gif-actions">
-            <i class="far fa-heart"></i>
+            <i class="far fa-heart fav" id="${id}"></i>
             <i class="fas fa-download"></i>
             <i class="fas fa-expand-alt"></i>
         </div>
@@ -333,6 +337,35 @@ const addEventTrendingSearch = () => {
         trendingSearchItem.addEventListener('click', handleTrendingSearchItem)
     })
 }
+
+
+/** Add Event Fav on Searchbar Gifs Btns */
+
+const addEventFav = () => {
+    const btnFav = document.querySelectorAll(".fav");
+
+    btnFav.forEach((item) => {
+        item.addEventListener('click', () => handleGifId(item));
+    });
+};
+
+/** Add Gif ID to "favGif []" */
+
+const handleGifId = (item) => {
+    let fav = document.getElementById(item.id);
+    /** If the id is not already included, the ID is pushed, else, its removed. */
+
+    if (!favGif.includes(fav.id)) {
+        favGif.push(fav.id)
+        localStorage.setItem('fav', favGif)
+    } else {
+        favGif.splice(favGif.indexOf(fav.id), 1)
+        localStorage.setItem('fav', favGif)
+
+    }
+    console.log('fav', favGif)
+    console.log("item", item.id);
+};
 
 
 /** EVENTS  */

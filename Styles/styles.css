@@ -57,7 +57,7 @@ body.darkmode h3,
 body.darkmode h4,
 body.darkmode li,
 body.darkmode a {
-  color: darkgrey !important;
+  color: darkgrey;
 }
 
 body.darkmode .t-item:hover {
@@ -118,6 +118,10 @@ body.darkmode .searcher i {
 body.darkmode .social-media i:hover {
   background-color: #37383c;
   color: white;
+}
+
+body.darkmode .gif-info p {
+  color: white !important;
 }
 
 .btn-dark-mode:hover {
