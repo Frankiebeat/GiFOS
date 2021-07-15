@@ -19,6 +19,7 @@ let SEARCH_LIMIT = 12;
 /** DATA */
 let allGifs = [];
 let totalGifs = 0;
+let searchbarGifsFav = []; 
 
 
 /* SEARCH */
@@ -355,15 +356,15 @@ const handleGifId = (item) => {
     let fav = document.getElementById(item.id);
     /** If the id is not already included, the ID is pushed, else, its removed. */
 
-    if (!favGif.includes(fav.id)) {
-        favGif.push(fav.id)
-        localStorage.setItem('fav', favGif)
+    if (!searchbarGifsFav.includes(fav.id)) {
+        searchbarGifsFav.push(fav.id)
+        localStorage.setItem('fav', searchbarGifsFav)
     } else {
-        favGif.splice(favGif.indexOf(fav.id), 1)
-        localStorage.setItem('fav', favGif)
+        searchbarGifsFav.splice(searchbarGifsFav.indexOf(fav.id), 1)
+        localStorage.setItem('fav', searchbarGifsFav)
 
     }
-    console.log('fav', favGif)
+    console.log('searchbarFav', searchbarGifsFav)
     console.log("item", item.id);
 };
 

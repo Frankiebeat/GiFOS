@@ -1,6 +1,10 @@
 const API_KEY = "aRqS8UlEl1BptpJk79iC8dffVAezjF7g";
 const ENDPOINT = "http://api.giphy.com/v1/gifs/";
 
+var favs = localStorage.getItem('fav')
+
+console.log(favs)
+
 /* API CONNECTIONS */
 
 export default {
@@ -28,7 +32,7 @@ export default {
 
     requestGifId() {
         return new Promise((resolve, reject) => {
-            fetch(`http://api.giphy.com/v1/gifs/search/tags?api_key=${API_KEY}&q=${searchValue}`)
+            fetch(`http://api.giphy.com/v1/gifs?api_key=${API_KEY}&ids=${favs}`)
                 .then((response) => response.json())
                 .then((data) => resolve(data))
                 .catch((error) => reject(`Error ${error}`));

@@ -57,11 +57,15 @@ body.darkmode h3,
 body.darkmode h4,
 body.darkmode li,
 body.darkmode a {
-  color: darkgrey;
+  color: darkgrey !important;
 }
 
 body.darkmode .t-item:hover {
   color: #50e3c2 !important;
+}
+
+body.darkmode .menu li a {
+  color: darkgrey !important;
 }
 
 body.darkmode .slide-left,

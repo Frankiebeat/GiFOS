@@ -16,7 +16,7 @@ const changeMode = () => {
         document.querySelector('.logoday').classList.add('dis-n')
         document.querySelector('.logodark').classList.remove('dis-n')
     } else {
-        localStorage.clear();
+        localStorage.removeItem('darkMode', 'true');
         document.body.classList.remove('darkmode')
         btnDarkMode.innerText = 'Modo Nocturno';
         document.querySelector('.logoday').classList.remove('dis-n')
