@@ -1,4 +1,7 @@
 import API from "../Services/services.js"
+import { favs } from "../Services/services.js"
+
+console.log(favs)
 
 const searchContainer = document.querySelector(".search-gif-grid")
 

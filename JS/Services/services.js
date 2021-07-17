@@ -1,9 +1,7 @@
 const API_KEY = "aRqS8UlEl1BptpJk79iC8dffVAezjF7g";
 const ENDPOINT = "http://api.giphy.com/v1/gifs/";
 
-var favs = localStorage.getItem('fav')
-
-console.log(favs)
+export var favs = JSON.parse(localStorage.getItem('fav')) 
 
 /* API CONNECTIONS */
 

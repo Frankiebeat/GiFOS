@@ -11,7 +11,7 @@ let containerWidth = 0;
 /** DATA */
 let gifsId = [];
 let allGifs = [];
-let trendingGifsFav = [];
+let trendingGifsFav = JSON.parse(localStorage.getItem('fav'));
 
 
 /**
@@ -139,10 +139,10 @@ const handleGifId = (item) => {
 
 	if (!trendingGifsFav.includes(fav.id)) {
 		trendingGifsFav.push(fav.id)
-		localStorage.setItem('fav', trendingGifsFav)
+		localStorage.setItem('fav', JSON.stringify(trendingGifsFav))
 	} else {
 		trendingGifsFav.splice(trendingGifsFav.indexOf(fav.id), 1)
-		localStorage.setItem('fav', trendingGifsFav)
+		localStorage.setItem('fav', JSON.stringify(trendingGifsFav))
 	}
 	console.log('trendingGifFav', trendingGifsFav)
 	console.log("item", item.id);
