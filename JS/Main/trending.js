@@ -137,23 +137,17 @@ const handleGifId = (item) => {
 	let fav = document.getElementById(item.id);
 	/** If the id is not already included, the ID is pushed, else, its removed. */
 
+	if (trendingGifsFav == null) { 
+		trendingGifsFav = [];
+		localStorage.setItem('fav', trendingGifsFav)
+	}
 	if (!trendingGifsFav.includes(fav.id)) {
 		trendingGifsFav.push(fav.id)
-<<<<<<< Updated upstream
 		localStorage.setItem('fav', JSON.stringify(trendingGifsFav))
 	} else {
 		trendingGifsFav.splice(trendingGifsFav.indexOf(fav.id), 1)
 		localStorage.setItem('fav', JSON.stringify(trendingGifsFav))
-=======
-	} else {
-		trendingGifsFav.splice(trendingGifsFav.indexOf(fav.id), 1)
->>>>>>> Stashed changes
 	}
-
-	if (favs == null) { 
-		localStorage.setItem('fav', trendingGifsFav)
-	} else 
-	localStorage.setItem('newFav', trendingGifsFav )
 
 	console.log('trendingGifFav', trendingGifsFav)
 	console.log("item", item.id);
