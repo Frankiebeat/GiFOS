@@ -1,7 +1,17 @@
 const API_KEY = "aRqS8UlEl1BptpJk79iC8dffVAezjF7g";
 const ENDPOINT = "http://api.giphy.com/v1/gifs/";
 
+<<<<<<< Updated upstream
 export var favs = JSON.parse(localStorage.getItem('fav')) 
+=======
+export var favs = localStorage.getItem('fav');
+export var newFavs = localStorage.getItem('newFav')
+export var allFavs = localStorage.setItem('allFavs', favs + newFavs);
+
+console.log(favs)
+console.log(newFavs)
+console.log("All Favs", allFavs)
+>>>>>>> Stashed changes
 
 /* API CONNECTIONS */
 
@@ -30,7 +40,7 @@ export default {
 
     requestGifId() {
         return new Promise((resolve, reject) => {
-            fetch(`http://api.giphy.com/v1/gifs?api_key=${API_KEY}&ids=${favs}`)
+            fetch(`http://api.giphy.com/v1/gifs?api_key=${API_KEY}&ids=${allFavs}`)
                 .then((response) => response.json())
                 .then((data) => resolve(data))
                 .catch((error) => reject(`Error ${error}`));

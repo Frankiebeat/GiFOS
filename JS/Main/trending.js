@@ -1,5 +1,5 @@
 import API from "../Services/services.js";
-
+import { favs } from "../Services/services.js";
 const trendingGifsContainer = document.querySelector(".gif-grid");
 const sliderLeftbtn = document.querySelector("#slide-left");
 const sliderRightBtn = document.querySelector("#slide-right");
@@ -139,11 +139,22 @@ const handleGifId = (item) => {
 
 	if (!trendingGifsFav.includes(fav.id)) {
 		trendingGifsFav.push(fav.id)
+<<<<<<< Updated upstream
 		localStorage.setItem('fav', JSON.stringify(trendingGifsFav))
 	} else {
 		trendingGifsFav.splice(trendingGifsFav.indexOf(fav.id), 1)
 		localStorage.setItem('fav', JSON.stringify(trendingGifsFav))
+=======
+	} else {
+		trendingGifsFav.splice(trendingGifsFav.indexOf(fav.id), 1)
+>>>>>>> Stashed changes
 	}
+
+	if (favs == null) { 
+		localStorage.setItem('fav', trendingGifsFav)
+	} else 
+	localStorage.setItem('newFav', trendingGifsFav )
+
 	console.log('trendingGifFav', trendingGifsFav)
 	console.log("item", item.id);
 };

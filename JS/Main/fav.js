@@ -1,7 +1,11 @@
 import API from "../Services/services.js"
+<<<<<<< Updated upstream
 import { favs } from "../Services/services.js"
 
 console.log(favs)
+=======
+import { allFavs } from "../Services/services.js"
+>>>>>>> Stashed changes
 
 const searchContainer = document.querySelector(".search-gif-grid")
 
