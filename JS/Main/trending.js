@@ -3,6 +3,7 @@ import { favs } from "../Services/services.js";
 const trendingGifsContainer = document.querySelector(".gif-grid");
 const sliderLeftbtn = document.querySelector("#slide-left");
 const sliderRightBtn = document.querySelector("#slide-right");
+const favbtn = document.querySelector(".fav")
 
 let offset = 0;
 let sliderOffset = 0;
@@ -11,7 +12,7 @@ let containerWidth = 0;
 /** DATA */
 let gifsId = [];
 let allGifs = [];
-let trendingGifsFav = JSON.parse(localStorage.getItem('fav'));
+let trendingGifsFav = [];
 
 
 /**
@@ -31,6 +32,7 @@ const handleToTrending = () => {
 
 			for (let i = 0; i < data.length; i++) {
 				trendingGifs += markup(data[i]);
+				
 			}
 
 			/** Save Data */
@@ -121,6 +123,13 @@ const moveSliderLeft = () => {
 	}
 };
 
+/** Check if GIF ID is already in FAV */
+
+const checkIDFav = () => { 
+	if (gifsId.filter(element => trendingGifsFav.includes(element)))
+	{ element.setAttribute}
+}
+
 /** Add Event Fav on Trending Gifs Btns */
 
 const addEventFav = () => {
@@ -135,6 +144,8 @@ const addEventFav = () => {
 
 const handleGifId = (item) => {
 	let fav = document.getElementById(item.id);
+	let trendingGifsFav = JSON.parse(localStorage.getItem('fav'));
+	
 	/** If the id is not already included, the ID is pushed, else, its removed. */
 
 	if (trendingGifsFav == null) { 

@@ -15,3 +15,9 @@
 .active {
 	color: $dm-color-grey !important;
 }
+
+.fav-gif { 
+	.fa-heart { 
+		font-weight: 900;
+	}
+}

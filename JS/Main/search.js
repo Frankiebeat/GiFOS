@@ -19,7 +19,7 @@ let SEARCH_LIMIT = 12;
 /** DATA */
 let allGifs = [];
 let totalGifs = 0;
-let searchbarGifsFav = []; 
+
 
 
 /* SEARCH */
@@ -353,16 +353,20 @@ const addEventFav = () => {
 /** Add Gif ID to "favGif []" */
 
 const handleGifId = (item) => {
+    let searchbarGifsFav = JSON.parse(localStorage.getItem('fav'));
     let fav = document.getElementById(item.id);
     /** If the id is not already included, the ID is pushed, else, its removed. */
 
-    if (!searchbarGifsFav.includes(fav.id)) {
-        searchbarGifsFav.push(fav.id)
-        localStorage.setItem('fav', searchbarGifsFav)
-    } else {
-        searchbarGifsFav.splice(searchbarGifsFav.indexOf(fav.id), 1)
-        localStorage.setItem('fav', searchbarGifsFav)
-
+    if (searchbarGifsFav == null) { 
+		searchbarGifsFav = [];
+		localStorage.setItem('fav', searchbarGifsFav)
+	}
+	if (!searchbarGifsFav.includes(fav.id)) {
+		searchbarGifsFav.push(fav.id)
+		localStorage.setItem('fav', JSON.stringify(searchbarGifsFav))
+	} else {
+		searchbarGifsFav.splice(searchbarGifsFav.indexOf(fav.id), 1)
+		localStorage.setItem('fav', JSON.stringify(searchbarGifsFav))
     }
     console.log('searchbarFav', searchbarGifsFav)
     console.log("item", item.id);

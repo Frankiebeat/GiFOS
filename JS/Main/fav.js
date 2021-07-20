@@ -1,9 +1,24 @@
 import API from "../Services/services.js"
 import { favs } from "../Services/services.js"
 
+let nofav = document.querySelector(".no-fav-gifs")
+
+
+/* if there's no favs, display the "No Fav" div  */ 
+if (favs.length == 0) 
+{ nofav.setAttribute("style", "display:block")}
+else {nofav.setAttribute("style", "display:none")}
+
 console.log(favs)
 
 const searchContainer = document.querySelector(".search-gif-grid")
+
+
+
+/**
+ * @description
+ * brings the data of a specified gif trough its ID 
+ */
 
 const handleFavGifs = () => {
     API.requestGifId()
@@ -18,10 +33,9 @@ const handleFavGifs = () => {
 
         searchContainer.innerHTML = favGifs;
 
-
     })}
 
-
+   
 /** Paint FAV section GIFS */
 const markup = (favGifs) => {
 	const {
@@ -38,7 +52,7 @@ const markup = (favGifs) => {
         <img src=${images.fixed_height.url} alt""/>
 
         <div class="gif-actions">
-            <i class="far fa-heart fav" id="${id}"></i>
+            <i class="fas fa-trash fav" id="${id}"></i>
             <i class="fas fa-download"></i>
             <i class="fas fa-expand-alt"></i>
         </div>

@@ -25,6 +25,10 @@
   color: #808080 !important;
 }
 
+.fav-gif .fa-heart {
+  font-weight: 900;
+}
+
 .dis-n {
   display: none !important;
 }
