@@ -7,7 +7,7 @@ body {
 		h4,
 		li,
 		a {
-			color: $nm-color-1!important;
+			color: $nm-color-white!important;
 		}
 		background-color: $nm-color-body;
 
@@ -15,9 +15,21 @@ body {
 			color: $dm-color-2 !important;
 		}
 
-		.menu li a {
-			color: $nm-color-1!important ; 
+		.menu {
+			@include media(sm) { 
+			background-color: $nm-color-input }
+		}
 
+		.menu li a {
+			@include media(sm) {
+				color: $nm-color-white;
+			}
+			color: $nm-color-white!important ; 
+
+		}
+
+		.fa-search, .fa-bars, .fa-times { 
+			color: $nm-color-1;
 		}
 
 		.slide-left,

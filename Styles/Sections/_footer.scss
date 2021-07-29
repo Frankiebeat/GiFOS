@@ -3,12 +3,12 @@ footer p {
 }
 
 footer {
-	@include media(lg) {
+	
 		display: flex;
 		justify-content: space-between;
 		flex-direction: row;
 		align-items: center;
-	}
+	
 	@include media(sm) {
 		display: flex;
 		flex-direction: column;
@@ -23,10 +23,10 @@ footer {
 		flex-direction: column;
 	}
 
-	@include media(lg) {
+	
 		display: flex;
 		align-items: center;
-	}
+	
 }
 
 .social-media {
