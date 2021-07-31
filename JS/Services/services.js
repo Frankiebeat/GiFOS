@@ -35,7 +35,17 @@ export default {
                 .then((data) => resolve(data))
                 .catch((error) => reject(`Error ${error}`));
         })
+    },
+
+    requestSingleGifId() {
+        return new Promise((resolve, reject) => { 
+            fetch(`http://api.giphy.com/v1/gif?api_key=${API_KEY}&ids=${item.id}`)
+            .then((response) => response.json())
+            .then((data) => resolve(data))
+            .catch((error) => reject(`Error ${error}`));
+    })
+        }
     }
 
 
-};
+

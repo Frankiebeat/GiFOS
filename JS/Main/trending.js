@@ -3,7 +3,7 @@ import { favs } from "../Services/services.js";
 const trendingGifsContainer = document.querySelector(".gif-grid");
 const sliderLeftbtn = document.querySelector("#slide-left");
 const sliderRightBtn = document.querySelector("#slide-right");
-const favbtn = document.querySelector(".fav")
+const modal = document.querySelector(".modal");
 
 let offset = 0;
 let sliderOffset = 0;
@@ -73,7 +73,7 @@ const markup = (trendingGifs) => {
         <div class="gif-actions">
             <i class="far fa-heart fav" id="${id}"></i>
             <i class="fas fa-download"></i>
-            <i class="fas fa-expand-alt"></i>
+            <i class="fas fa-expand-alt expand" id="${id}"></i>
         </div>
 
         <div class="gif-info">
@@ -123,22 +123,35 @@ const moveSliderLeft = () => {
 	}
 };
 
-/** Check if GIF ID is already in FAV */
-
-const checkIDFav = () => { 
-	if (gifsId.filter(element => trendingGifsFav.includes(element)))
-	{ element.setAttribute}
-}
-
 /** Add Event Fav on Trending Gifs Btns */
 
 const addEventFav = () => {
 	const btnFav = document.querySelectorAll(".fav");
+	const btnExpand = document.querySelectorAll(".expand")
+
+	btnExpand.forEach((item) => {
+		item.addEventListener('click', () => handleGifExpand(item));
+	})
 
 	btnFav.forEach((item) => {
 		item.addEventListener('click', () => handleGifId(item));
 	});
 };
+
+/** Handle EXPAND Gif */
+
+const handleGifExpand = (item) => {
+	let id = document.getElementById(item.id)
+	modal.setAttribute("style", "display:block")
+	console.log(item.id)
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+	if (event.target == modal) {
+	  modal.style.display = "none";
+	}
+  }
 
 /** Add Gif ID to "trendingGifsFav []" */
 
