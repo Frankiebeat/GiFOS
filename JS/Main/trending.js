@@ -3,7 +3,8 @@ import { favs } from "../Services/services.js";
 const trendingGifsContainer = document.querySelector(".gif-grid");
 const sliderLeftbtn = document.querySelector("#slide-left");
 const sliderRightBtn = document.querySelector("#slide-right");
-const modal = document.querySelector(".modal");
+export const modal = document.querySelector(".modal");
+export const modalContainer = document.querySelector(".modal-content")
 
 let offset = 0;
 let sliderOffset = 0;
@@ -140,10 +141,53 @@ const addEventFav = () => {
 
 /** Handle EXPAND Gif */
 
-const handleGifExpand = (item) => {
+export const handleGifExpand = (item) => {
 	let id = document.getElementById(item.id)
+	id = id.id;
+	API.requestSingleGifId(id)
+	.then((response) => {
+		const { 
+			data, pagination
+		} = response; 
+		console.log(response)
+
+		let expandGif = "";
+
+		expandGif = paintModal(data[0])
+		modalContainer.innerHTML = expandGif;
+		const timesModal = document.querySelector(".times-modal-x")
+		timesModal.setAttribute("style", "display:block")
+		timesModal.addEventListener("click", handleTimesModal)
+
+	})
 	modal.setAttribute("style", "display:block")
-	console.log(item.id)
+
+
+	console.log(id)
+}
+
+const paintModal = (expandGif) => { 
+	const { title,
+		 images, 
+		 username, 
+		 id } = expandGif;
+
+		 console.log(expandGif)
+
+		 return ` <div class="times-modal">
+		 <i class="fa fa-times times-modal-x "></i></div>
+		 
+		 <img src=${images.fixed_height.url} alt""/>
+		 <div class="modal-info">
+			 <div class="expand-gif-info">
+				 <p> ${username} </p>
+				 <h3> ${title} </h3>
+			 </div>
+			 <div class="expand-gif-actions">
+				 <i class="far fa-heart fav" id="${id}"></i>
+				 <i class="fas fa-download btn-hover"></i>
+			 </div>`;
+
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -152,6 +196,11 @@ window.onclick = function(event) {
 	  modal.style.display = "none";
 	}
   }
+
+// Close Modal when X is clicked
+const handleTimesModal = () => { 
+	modal.setAttribute("style", "display:none")
+}
 
 /** Add Gif ID to "trendingGifsFav []" */
 
@@ -178,6 +227,7 @@ const handleGifId = (item) => {
 };
 
 /** Event listeners */
+
 
 sliderRightBtn.addEventListener("click", moveSliderRight);
 sliderLeftbtn.addEventListener("click", moveSliderLeft);

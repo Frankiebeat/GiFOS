@@ -99,3 +99,13 @@ body {
 .btn-dark-mode:hover {
 	cursor: pointer;
 }
+
+.modal-content { 
+	background-color: $nm-color-trending;
+	.expand-gif-actions { 
+		i { 
+			color: $nm-color-1!important;
+		}
+	}
+}
+

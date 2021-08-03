@@ -1,3 +1,5 @@
+import { handleGifExpand } from "./trending.js";
+
 /** PATHS */
 const API_KEY = "aRqS8UlEl1BptpJk79iC8dffVAezjF7g";
 const ENDPOINT = "http://api.giphy.com/v1/gifs/";
@@ -60,10 +62,10 @@ const handleAutoCom = () => {
             let list = "";
             let restoreSearch = '';
 
-            restoreSearch = `<hr><li><img src="/Assets/icon-search.svg" alt="icon-search">Sugerencia</li>
-                <li><img src="/Assets/icon-search.svg" alt="icon-search">Sugerencia</li>
-                <li><img src="/Assets/icon-search.svg" alt="icon-search">Sugerencia</li>
-                <li><img src="/Assets/icon-search.svg" alt="icon-search">Sugerencia</li>`;
+            restoreSearch = `<hr><li><i class="fas fa-search"></i>Sugerencia</li>
+                <li><i class="fas fa-search"></i>Sugerencia</li>
+                <li><i class="fas fa-search"></i>Sugerencia</li>
+                <li><i class="fas fa-search"></i>Sugerencia</li>`;
 
             // AutoCom.innerHTML = restoreSearch;
 
@@ -88,7 +90,7 @@ const markUpAutocom = (list) => {
         name
     } = list
     return `<hr>
-    <li class="item-autocom" id="value-${name}"><img src="/Assets/icon-search.svg" alt="icon-search"> ${name} </li>`
+    <li class="item-autocom" id="value-${name}"><i class="fas fa-search"></i> ${name} </li>`
 }
 
 /* Search API connection */
@@ -208,7 +210,7 @@ const markup = (Gifs) => {
         <div class="gif-actions">
             <i class="far fa-heart fav" id="${id}"></i>
             <i class="fas fa-download"></i>
-            <i class="fas fa-expand-alt"></i>
+            <i class="fas fa-expand-alt expand" id="${id}"></i>
         </div>
 
         <div class="gif-info">
@@ -303,6 +305,7 @@ const handleTrendingSearch = () => {
             }
 
             addEventTrendingSearch()
+            
 
         })
         .catch((error) => (`Error ${error} en HandleTrendingSearch`));
@@ -344,6 +347,11 @@ const addEventTrendingSearch = () => {
 
 const addEventFav = () => {
     const btnFav = document.querySelectorAll(".fav");
+    const btnExpand = document.querySelectorAll(".expand")
+
+    btnExpand.forEach((item) => {
+		item.addEventListener('click', () => handleGifExpand(item));
+	})
 
     btnFav.forEach((item) => {
         item.addEventListener('click', () => handleGifId(item));

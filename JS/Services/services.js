@@ -37,9 +37,9 @@ export default {
         })
     },
 
-    requestSingleGifId() {
+    requestSingleGifId(id) {
         return new Promise((resolve, reject) => { 
-            fetch(`http://api.giphy.com/v1/gif?api_key=${API_KEY}&ids=${item.id}`)
+            fetch(`http://api.giphy.com/v1/gifs?api_key=${API_KEY}&ids=${id}`)
             .then((response) => response.json())
             .then((data) => resolve(data))
             .catch((error) => reject(`Error ${error}`));
