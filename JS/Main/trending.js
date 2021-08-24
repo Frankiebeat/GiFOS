@@ -60,6 +60,7 @@ const handleToTrending = () => {
 const markup = (trendingGifs) => {
 	const {
 		title,
+		url,
 		images,
 		username,
 		id
@@ -73,7 +74,7 @@ const markup = (trendingGifs) => {
 
         <div class="gif-actions">
             <i class="far fa-heart fav" id="${id}"></i>
-            <i class="fas fa-download"></i>
+            <i class="fas fa-download download" id="${id}"></i>
             <i class="fas fa-expand-alt expand" id="${id}"></i>
         </div>
 
@@ -129,9 +130,14 @@ const moveSliderLeft = () => {
 const addEventFav = () => {
 	const btnFav = document.querySelectorAll(".fav");
 	const btnExpand = document.querySelectorAll(".expand")
+	const btnDownload = document.querySelectorAll(".download")
 
 	btnExpand.forEach((item) => {
 		item.addEventListener('click', () => handleGifExpand(item));
+	})
+
+	btnDownload.forEach((item) => {
+		item.addEventListener('click', () => handleGifDownload(item));
 	})
 
 	btnFav.forEach((item) => {
@@ -155,18 +161,21 @@ export const handleGifExpand = (item) => {
 
 		expandGif = paintModal(data[0])
 		modalContainer.innerHTML = expandGif;
+		addEventFav()
 		const timesModal = document.querySelector(".times-modal-x")
 		timesModal.setAttribute("style", "display:block")
 		timesModal.addEventListener("click", handleTimesModal)
 
 	})
 	modal.setAttribute("style", "display:block")
-
-
 	console.log(id)
 }
 
 const paintModal = (expandGif) => { 
+
+	if(window.favcheck	()){
+		// add code here
+	  }
 	const { title,
 		 images, 
 		 username, 
@@ -174,8 +183,9 @@ const paintModal = (expandGif) => {
 
 		 console.log(expandGif)
 
-		 return ` <div class="times-modal">
-		 <i class="fa fa-times times-modal-x "></i></div>
+		 return ` 
+		 <div class="times-modal">
+		 <i class="fa fa-times times-modal-x "></i> </div>
 		 
 		 <img src=${images.fixed_height.url} alt""/>
 		 <div class="modal-info">
@@ -185,9 +195,11 @@ const paintModal = (expandGif) => {
 			 </div>
 			 <div class="expand-gif-actions">
 				 <i class="far fa-heart fav" id="${id}"></i>
-				 <i class="fas fa-download btn-hover"></i>
-			 </div>`;
+				 <i class="fas fa-download download btn-hover" id="${id}"></i>
+		     </div>
+		 </div>`;
 
+		 
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -202,9 +214,42 @@ const handleTimesModal = () => {
 	modal.setAttribute("style", "display:none")
 }
 
+
+// HANDLE GIF DOWNLOAD 
+
+export const handleGifDownload = (item) => {
+let id = document.getElementById(item.id)
+	id = id.id;
+
+	API.requestSingleGifId(id)
+	.then((response) => {
+		const { 
+			data, pagination
+		} = response; 
+
+		// get image 
+		let gif = response.data[0].images.original.url;
+		// get image as blob
+	API.requestBlobDownload(gif) 
+		.then((response) => {
+			let file = response
+			 // create new element 
+			 let a = document.createElement('a');
+			 //use download attribute 
+			 a.download = 'GiFOS-Gif';
+			 a.href = window.URL.createObjectURL(file);
+			 //store download url
+			 a.dataset.downloadurl = ['application/octet-stream', a.download, a.href].join(':');
+			 a.click();
+		}  )
+	})}
+
+
+
+
 /** Add Gif ID to "trendingGifsFav []" */
 
-const handleGifId = (item) => {
+export const handleGifId = (item) => {
 	let fav = document.getElementById(item.id);
 	let trendingGifsFav = JSON.parse(localStorage.getItem('fav'));
 	

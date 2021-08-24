@@ -1,4 +1,5 @@
-import { handleGifExpand } from "./trending.js";
+import { handleGifExpand, handleGifDownload } from "./trending.js";
+
 
 /** PATHS */
 const API_KEY = "aRqS8UlEl1BptpJk79iC8dffVAezjF7g";
@@ -209,7 +210,7 @@ const markup = (Gifs) => {
 
         <div class="gif-actions">
             <i class="far fa-heart fav" id="${id}"></i>
-            <i class="fas fa-download"></i>
+            <i class="fas fa-download download" id="${id}"></i>
             <i class="fas fa-expand-alt expand" id="${id}"></i>
         </div>
 
@@ -348,14 +349,21 @@ const addEventTrendingSearch = () => {
 const addEventFav = () => {
     const btnFav = document.querySelectorAll(".fav");
     const btnExpand = document.querySelectorAll(".expand")
+    const btnDownload = document.querySelectorAll(".download")
 
     btnExpand.forEach((item) => {
 		item.addEventListener('click', () => handleGifExpand(item));
 	})
 
+    btnDownload.forEach((item) => {
+		item.addEventListener('click', () => handleGifDownload(item));
+	})
+
     btnFav.forEach((item) => {
         item.addEventListener('click', () => handleGifId(item));
     });
+
+    
 };
 
 /** Add Gif ID to "favGif []" */
@@ -387,6 +395,13 @@ searcherCross.addEventListener('click', closeSearchInput);
 inputSearch.addEventListener('input', handleAutoCom);
 inputSearch.addEventListener('click', handleSearchInput);
 btnSearch.addEventListener("click", handleToSearch);
+inputSearch.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        handleToSearch();
+        
+    }
+});
+
 btnVerMas.addEventListener('click', () => handleToSearch(true));
 
 

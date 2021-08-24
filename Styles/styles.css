@@ -288,16 +288,16 @@ body.darkmode .gif-info p {
   color: white !important;
 }
 
-.btn-dark-mode:hover {
-  cursor: pointer;
-}
-
-.modal-content {
+body.darkmode .modal-content {
   background-color: #222326;
 }
 
-.modal-content .expand-gif-actions i {
+body.darkmode .modal-content .expand-gif-actions i {
   color: darkgrey !important;
+}
+
+.btn-dark-mode:hover {
+  cursor: pointer;
 }
 
 /*  SECTION */

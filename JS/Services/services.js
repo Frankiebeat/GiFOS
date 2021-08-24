@@ -44,7 +44,16 @@ export default {
             .then((data) => resolve(data))
             .catch((error) => reject(`Error ${error}`));
     })
-        }
+        },
+
+        requestBlobDownload(gif) {
+            return new Promise((resolve, reject) => { 
+                fetch(`${gif}`)
+                .then((response) => response.blob())
+                .then((data) => resolve(data))
+                .catch((error) => reject(`Error ${error}`));
+        })
+            }
     }
 
 

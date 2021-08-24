@@ -93,6 +93,15 @@ body {
 				color: white !important;
 			}
 		}
+		.modal-content { 
+			background-color: $nm-color-trending;
+			.expand-gif-actions { 
+				i { 
+					color: $nm-color-1!important;
+				}
+			}
+		}
+		
 	}
 }
 
@@ -100,12 +109,4 @@ body {
 	cursor: pointer;
 }
 
-.modal-content { 
-	background-color: $nm-color-trending;
-	.expand-gif-actions { 
-		i { 
-			color: $nm-color-1!important;
-		}
-	}
-}
 

@@ -1,7 +1,20 @@
 import API from "../Services/services.js"
 import { favs } from "../Services/services.js"
+import { handleGifExpand, handleGifDownload, handleGifId } from "./trending.js";
+
 
 let nofav = document.querySelector(".no-fav-gifs")
+
+// Check if user is on "fav"
+
+window.favcheck = function() {
+    var check = false;
+    if(document.location.pathname === "/Pages/fav.html"){
+      check=true;
+      }
+    console.log(check)
+    return check;
+}
 
 
 /* if there's no favs, display the "No Fav" div  */ 
@@ -32,7 +45,7 @@ const handleFavGifs = () => {
         }
 
         searchContainer.innerHTML = favGifs;
-
+        addEventFav()
     })}
 
    
@@ -53,8 +66,8 @@ const markup = (favGifs) => {
 
         <div class="gif-actions">
             <i class="fas fa-trash fav" id="${id}"></i>
-            <i class="fas fa-download"></i>
-            <i class="fas fa-expand-alt"></i>
+            <i class="fas fa-download download" id="${id}"></i>
+            <i class="fas fa-expand-alt expand" id="${id}"></i>
         </div>
 
         <div class="gif-info">
@@ -65,5 +78,25 @@ const markup = (favGifs) => {
     </li>`;
 };
 
+const addEventFav = () => {
+	const btnTrash = document.querySelectorAll(".fav");
+	const btnExpand = document.querySelectorAll(".expand")
+	const btnDownload = document.querySelectorAll(".download")
+
+	btnExpand.forEach((item) => {
+		item.addEventListener('click', () => handleGifExpand(item));
+	})
+
+	btnDownload.forEach((item) => {
+		item.addEventListener('click', () => handleGifDownload(item));
+	})
+
+	btnTrash.forEach((item) => {
+		item.addEventListener('click', () => handleGifId(item));
+	});
+};
+
+
 
 handleFavGifs()
+favcheck()
