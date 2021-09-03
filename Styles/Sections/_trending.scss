@@ -5,6 +5,10 @@
 	width: 100%;
 	background: #f3f5f8;
 	background-size: cover;
+
+	@include media(xs) {
+		height: 400px;
+	}
 	h2 {
 		font-family: $primary_font;
 		color: $dm-color-1;
@@ -19,7 +23,7 @@
 	}
 	br {
 		display: none;
-		@include media(sm) {
+		@include media(xs) {
 			display: block;
 		}
 	}
@@ -40,7 +44,7 @@
 	max-width: 1200px;
 	margin-right: 40px;
 	overflow-y: hidden;
-	@include media(sm) {
+	@include media(xs) {
 		display: block;
 		white-space: nowrap;
 		overflow-x: scroll;
@@ -63,15 +67,17 @@
 		width: 330px;
 		height: 250px;
 	}
-	@include media(sm) {
+	@include media(xs) {
+		margin-left: 20px;
+	    margin-right: 20px;
 		margin: 20px;
-		width: 325px;
-		height: 300px;
+		width: 330px;
+		height: 250px;
 	}
 }
 
 .gif-card:last-of-type {
-	@include media(sm) {
+	@include media(xs) {
 		margin-right: 50px;
 	}
 }
@@ -115,7 +121,7 @@
 		font-size: 12px;
 	}
 
-	@include media(sm) {
+	@include media(xs) {
 		bottom: 50px;
 		p {
 			font-size: 12px;
@@ -163,7 +169,7 @@
 	color: $dm-color-1;
 	padding: 7px;
 	border: 1px solid $dm-color-1;
-	@include media(sm) {
+	@include media(xs) {
 		display: none;
 	}
 }

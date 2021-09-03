@@ -2,6 +2,12 @@ header {
 	margin: 10px;
 }
 
+.logo { 
+	@include media(xs) {
+		img { width: 50px;}
+	}
+}
+
 .header-nav {
 	display: flex;
 	justify-content: space-between;

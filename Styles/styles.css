@@ -326,12 +326,12 @@ body {
 .fa-bars {
   display: none;
   color: #572ee5;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .fa-times {
   color: #572ee5;
-  font-size: 25px;
+  font-size: 20px;
   display: none;
 }
 
@@ -349,6 +349,12 @@ body {
 
 header {
   margin: 10px;
+}
+
+@media (max-width: 360px) {
+  .logo img {
+    width: 50px;
+  }
 }
 
 .header-nav {
@@ -497,15 +503,18 @@ header {
   color: #572ee5;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 360px) {
   .searchbarhead {
-    width: 320px;
-    height: 100px;
+    width: 250px;
+    height: 50px;
+    font-size: 15px;
+    line-height: 1px;
+    margin-bottom: 30px;
   }
 }
 
 .searchbarhead h2 {
-  line-height: 50px;
+  line-height: 35px;
   font-family: "Monstserrat", sans-serif;
 }
 
@@ -529,9 +538,12 @@ header {
           flex-direction: column;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 360px) {
   .searchbarmain {
     margin-top: 50px;
+  }
+  .searchbarmain img {
+    max-width: 200px;
   }
 }
 
@@ -559,6 +571,13 @@ header {
   width: 320px;
 }
 
+@media (max-width: 360px) {
+  .searcher {
+    width: 180px;
+    height: 30px;
+  }
+}
+
 .searcher .btn-search {
   display: block;
   position: absolute;
@@ -566,6 +585,7 @@ header {
   right: 40px;
   text-align: center;
   padding-left: 10px;
+  font-weight: lighter;
 }
 
 .searcher .fa-search {
@@ -598,7 +618,7 @@ header {
   left: -60px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 360px) {
   .searcher .input-search:focus {
     left: -20px;
   }
@@ -626,6 +646,12 @@ header {
   transition: max-height 0.6s ease-out;
 }
 
+@media (max-width: 360px) {
+  .searcher .autocom-box {
+    width: 180px;
+  }
+}
+
 .searcher .autocom-box hr {
   position: absolute;
   width: 400px;
@@ -638,10 +664,9 @@ header {
   opacity: 0.2;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 360px) {
   .searcher .autocom-box hr {
-    width: 300px;
-    left: 50px;
+    width: 50px;
     margin: 10px auto;
   }
 }
@@ -805,6 +830,20 @@ header {
   }
 }
 
+.searchbarbottom hr {
+  width: 400px;
+  border-radius: 1px;
+  color: #808080;
+  opacity: 0.2;
+}
+
+@media (max-width: 360px) {
+  .searchbarbottom hr {
+    width: 200px;
+    margin: 10px auto;
+  }
+}
+
 .trending-search {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -818,25 +857,23 @@ header {
   margin-right: 20px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 360px) {
   .trending-search {
-    margin-right: 30px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
     font-size: 0.8rem;
-    margin-top: -10px;
+    padding: 3px;
+    margin: 0 auto;
+    max-width: 350px;
   }
 }
 
 .trending-search li {
+  font-size: 12px;
+  margin-top: -10px;
   list-style: none;
-  padding: 3px;
+  padding: 5px;
   text-transform: capitalize;
+  font-family: "Monstserrat", sans-serif;
+  font-weight: normal;
 }
 
 .trending-search:hover {
@@ -854,6 +891,12 @@ header {
   width: 100%;
   background: #f3f5f8;
   background-size: cover;
+}
+
+@media (max-width: 360px) {
+  .trending {
+    height: 400px;
+  }
 }
 
 .trending h2 {
@@ -874,7 +917,7 @@ header {
   display: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 360px) {
   .trending br {
     display: block;
   }
@@ -902,7 +945,7 @@ header {
   overflow-y: hidden;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 360px) {
   .gif-grid {
     display: block;
     white-space: nowrap;
@@ -929,15 +972,17 @@ header {
   height: 250px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 360px) {
   .gif-card {
+    margin-left: 20px;
+    margin-right: 20px;
     margin: 20px;
-    width: 325px;
-    height: 300px;
+    width: 330px;
+    height: 250px;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 360px) {
   .gif-card:last-of-type {
     margin-right: 50px;
   }
@@ -987,7 +1032,7 @@ header {
   font-size: 12px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 360px) {
   .gif-info {
     bottom: 50px;
   }
@@ -1035,7 +1080,7 @@ header {
   border: 1px solid #572ee5;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 360px) {
   .slide-left,
   .slide-right {
     display: none;

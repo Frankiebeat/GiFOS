@@ -1,4 +1,4 @@
-import { handleGifExpand, handleGifDownload } from "./trending.js";
+import { handleGifExpand, handleGifDownload, markup, addEventFav } from "./main.js";
 
 
 /** PATHS */
@@ -195,33 +195,6 @@ const markupTitle = (searchTitle) => {
     <h1> ${searchTitle} </h1>`
 }
 
-/** Paint Search section GIFS */
-const markup = (Gifs) => {
-    const {
-        title,
-        images,
-        username,
-        id
-    } = Gifs;
-
-    return `<li class="gif-card" id="${id}">
-    <div class="hover-div">
-        <img src=${images.original.url} alt""/>
-
-        <div class="gif-actions">
-            <i class="far fa-heart fav" id="${id}"></i>
-            <i class="fas fa-download download" id="${id}"></i>
-            <i class="fas fa-expand-alt expand" id="${id}"></i>
-        </div>
-
-        <div class="gif-info">
-            <p class="gif-user">${username}</p>
-            <p class="gif-title">${title}</p>
-        </div>
-    </div>
-    </li>`
-}
-
 /** AUTOCOM BOX  */
 
 const searcherAutoCom = document.querySelector("#search-list");
@@ -343,50 +316,6 @@ const addEventTrendingSearch = () => {
     })
 }
 
-
-/** Add Event Fav on Searchbar Gifs Btns */
-
-const addEventFav = () => {
-    const btnFav = document.querySelectorAll(".fav");
-    const btnExpand = document.querySelectorAll(".expand")
-    const btnDownload = document.querySelectorAll(".download")
-
-    btnExpand.forEach((item) => {
-		item.addEventListener('click', () => handleGifExpand(item));
-	})
-
-    btnDownload.forEach((item) => {
-		item.addEventListener('click', () => handleGifDownload(item));
-	})
-
-    btnFav.forEach((item) => {
-        item.addEventListener('click', () => handleGifId(item));
-    });
-
-    
-};
-
-/** Add Gif ID to "favGif []" */
-
-const handleGifId = (item) => {
-    let searchbarGifsFav = JSON.parse(localStorage.getItem('fav'));
-    let fav = document.getElementById(item.id);
-    /** If the id is not already included, the ID is pushed, else, its removed. */
-
-    if (searchbarGifsFav == null) { 
-		searchbarGifsFav = [];
-		localStorage.setItem('fav', searchbarGifsFav)
-	}
-	if (!searchbarGifsFav.includes(fav.id)) {
-		searchbarGifsFav.push(fav.id)
-		localStorage.setItem('fav', JSON.stringify(searchbarGifsFav))
-	} else {
-		searchbarGifsFav.splice(searchbarGifsFav.indexOf(fav.id), 1)
-		localStorage.setItem('fav', JSON.stringify(searchbarGifsFav))
-    }
-    console.log('searchbarFav', searchbarGifsFav)
-    console.log("item", item.id);
-};
 
 
 /** EVENTS  */
